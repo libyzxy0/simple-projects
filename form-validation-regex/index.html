@@ -15,66 +15,185 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Form Validation</h1>
+        <h1 class="text-center">Camping and Hiking Form</h1>
     </div>
     <div class="container mt-5">
         <form id="form" onsubmit="return validateForm()">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-4">
-                        <h2>Texts and Numbers</h2>
+                        <h2>Personal Information</h2>
                     </div>
                     <div class="mb-3">
                         <label for="nameInput" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="nameInput" name="name" placeholder="Enter your Name" pattern="[A-Za-z ]+"  >
+                        <input type="text" class="form-control" id="nameInput" name="name" placeholder="Enter your Name" pattern="[A-Za-z ]+">
                         <p id="nameError" style="color: red;"></p>
                     </div>
                     <div class="mb-3">
-                        <label for="numberInput" class="form-label">Number</label>
-                        <input type="number" class="form-control" id="numberInput" name="number" placeholder="Enter your Number" pattern="[0-9]+"  >
+                        <label for="numberInput" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="numberInput" name="number" placeholder="Enter your Number" pattern="[0-9]+">
                         <p id="numberError" style="color: red;"></p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <h2>Emails and Passwords</h2>
                     </div>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="emailInput" name="email" placeholder="Enter your Email"  >
+                        <input type="email" class="form-control" id="emailInput" name="email" placeholder="Enter your Email">
                         <p id="emailError" style="color: red;"></p>
                     </div>
-                    <div class="mb-3">
-                        <label for="passwordInput" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Enter your Password"  >
-                        <p id="passwordError" style="color: red;"></p>
-                    </div>
+                </div>
+                
+                <div class="col-md-6">
                     <div class="mb-4">
-                        <h2>Date and Select Options</h2>
+                        <h2>Emergency Contact Information</h2>
                     </div>
                     <div class="mb-3">
-                        <label for="optionSelect" class="form-label">Select Options</label>
-                        <select class="form-control" id="optionSelect" name="option"  >
-                            <option value="relationship">Option</option>
-                            <option value="option1">Option1</option>
-                            <option value="option2">Option2</option>
-                            <option value="option3">Option3</option>
+                        <label for="emergencyNameInput" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="emergencyNameInput" name="emergencyName" placeholder="Enter Emergency Contact Name" pattern="[A-Za-z ]+">
+                        <p id="emergencyNameError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emergencyRelationshipSelect" class="form-label">Relationship</label>
+                        <select class="form-control" id="emergencyRelationshipSelect" name="emergencyRelationship">
+                            <option value="relationship">Options</option>
+                            <option value="mother">Mother</option>
+                            <option value="father">Father</option>
+                            <option value="other">Other</option>
                         </select>
-                        <p id="optionError" style="color: red;"></p>
+                        <p id="emergencyRelationshipError" style="color: red;"></p>
                     </div>
                     <div class="mb-3">
-                        <label for="dateInput" class="form-label">Date</label>
-                        <input type="date" class="form-control" id="dateInput" name="date"  >
-                        <p id="dateError" style="color: red;"></p>
+                        <label for="emergencyNumberInput" class="form-label">Emergency Phone Number</label>
+                        <input type="tel" class="form-control" id="emergencyNumberInput" name="emergencyNumber" placeholder="Enter Emergency Phone Number" pattern="[0-9]+">
+                        <p id="emergencyNumberError" style="color: red;"></p>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h2>Group Information (If Applicable)</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="groupLeaderNameInput" class="form-label">Group Leader Name</label>
+                        <input type="text" class="form-control" id="groupLeaderNameInput" name="groupLeaderName" placeholder="Enter Group Leader Name" pattern="[A-Za-z ]+">
+                        <p id="groupLeaderNameError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="groupSizeInput" class="form-label">Group Size</label>
+                        <input type="number" class="form-control" id="groupSizeInput" name="groupSize" placeholder="Enter Group Size" pattern="[0-9]+">
+                        <p id="groupSizeError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="groupNameInput" class="form-label">Group Name</label>
+                        <input type="text" class="form-control" id="groupNameInput" name="groupName" placeholder="Enter Group Name" pattern="[A-Za-z ]+">
+                        <p id="groupNameError" style="color: red;"></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="mb-4">
+                                                <h2>Camping or Hiking Details</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="startOfTripInput" class="form-label">Start of Trip</label>
+                        <input type="date" class="form-control" id="startOfTripInput" name="startOfTrip">
+                        <p id="startOfTripError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endOfTripInput" class="form-label">End of Trip</label>
+                        <input type="date" class="form-control" id="endOfTripInput" name="endOfTrip">
+                        <p id="endOfTripError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="destinationInput" class="form-label">Destination</label>
+                        <input type="text" class="form-control" id="destinationInput" name="destination" placeholder="Enter Destination" pattern="[A-Za-z ]+">
+                        <p id="destinationError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="purposeOfTripInput" class="form-label">Purpose of Trip</label>
+                        <input type="text" class="form-control" id="purposeOfTripInput" name="purposeOfTrip" placeholder="Enter Purpose of Trip" pattern="[A-Za-z ]+">
+                        <p id="purposeOfTripError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="specialRequestTextarea" class="form-label">Special Request</label>
+                        <textarea class="form-control" id="specialRequestTextarea" name="specialRequest" placeholder="Enter Special Request" pattern="[A-Za-z ]+" rows="3"></textarea>
+                        <p id="specialRequestError" style="color: red;"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h2>Health and Safety Information</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="medicalConditionsInput" class="form-label">Medical Conditions or Allergies</label>
+                        <input type="text" class="form-control" id="medicalConditionsInput" name="medicalConditions" placeholder="Enter Medical Conditions or Allergies" pattern="[A-Za-z ]+">
+                        <p id="medicalConditionsError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dietaryRestrictionsInput" class="form-label">Dietary Restrictions</label>
+                        <input type="text" class="form-control" id="dietaryRestrictionsInput" name="dietaryRestrictions" placeholder="Enter Dietary Restrictions" pattern="[A-Za-z ]+">
+                        <p id="dietaryRestrictionsError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fitnessLevelSelect" class="form-label">Fitness Level or Experience in Hiking</label>
+                        <select class="form-control" id="fitnessLevelSelect" name="fitnessLevel">
+                            <option value="1">Options</option>
+                            <option value="2">Beginner or New to Hiking</option>
+                            <option value="3">Have Experience in Hiking</option>
+                            <option value="4">Other</option>
+                        </select>
+                        <p id="fitnessLevelError" style="color: red;"></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h2>Equipment and Gear</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="personalEquipmentInput" class="form-label">List of Personal Equipment and Gear</label>
+                        <input type="text" class="form-control" id="personalEquipmentInput" name="personalEquipment" placeholder="Enter List of Personal Equipment and Gear" pattern="[A-Za-z ]+">
+                        <p id="personalEquipmentError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rentalEquipmentInput" class="form-label">Rental Equipment Request</label>
+                        <input type="text" class="form-control" id="rentalEquipmentInput" name="rentalEquipment" placeholder="Enter Rental Equipment Request" pattern="[A-Za-z ]+">
+                        <p id="rentalEquipmentError" style="color: red;"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="responsibilityInput" class="form-label">Acknowledgement of Responsibility for Equipment</label>
+                        <input type="text" class="form-control" id="responsibilityInput" name="responsibility" placeholder="Enter Acknowledgement of Responsibility for Equipment" pattern="[A-Za-z ]+">
+                        <p id="responsibilityError" style="color: red;"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h2>Waiver and Release of Liability</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="waiverSelect" class="form-label">Waiver of Liability</label>
+                        <select class="form-control" id="waiverSelect" name="waiver">
+                            <option value="1">Options</option>
+                            <option value="2">Option 1</option>
+                            <option value="3">Option 2</option>
+                            <option value="4">Other</option>
+                        </select>
+                        <p id="waiverError" style="color: red;"></p>
+                    </div>
+                </div>
+            </div>
+
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary w-100">Submit</button>
             </div>
         </form>
     </div>
     <script src="script.js"></script>
-
 </body>
 </html>
